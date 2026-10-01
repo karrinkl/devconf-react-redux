@@ -1,0 +1,30 @@
+/* Компонент RegistrationForm: поле ввода и кнопка отправки. */
+
+.form {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.submit {
+  padding-top: 28px;
+}
+
+.success {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--color-neutral-0);
+  border: 1.5px solid var(--color-semantic-success);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  color: var(--color-neutral-900);
+}
+
+.successMark {
+  color: var(--color-semantic-success);
+  font-weight: 700;
+}

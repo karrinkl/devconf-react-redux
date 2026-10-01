@@ -1,0 +1,74 @@
+/* Компонент Button. Соответствует набору Button/CTA из ЛР № 17. */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 14px var(--space-6) 14px var(--space-7);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color var(--motion-fast) var(--easing),
+    border-color var(--motion-fast) var(--easing),
+    box-shadow var(--motion-fast) var(--easing),
+    color var(--motion-fast) var(--easing);
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Тип Primary: состояния Default, Hover, Pressed, Disabled */
+
+.primary {
+  background-color: var(--color-brand-primary);
+  color: var(--color-neutral-0);
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--color-brand-primary-hover);
+  box-shadow: var(--shadow-card);
+}
+
+.primary:active:not(:disabled) {
+  background-color: var(--color-brand-primary-pressed);
+  box-shadow: none;
+}
+
+.primary:disabled {
+  background-color: var(--color-neutral-200);
+  color: var(--color-neutral-500);
+  cursor: not-allowed;
+}
+
+/* Тип Secondary: состояния Default, Hover, Pressed, Disabled */
+
+.secondary {
+  background-color: var(--color-neutral-0);
+  border-color: var(--color-neutral-300);
+  color: var(--color-neutral-900);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: var(--color-brand-primary-subtle);
+  border-color: var(--color-brand-primary);
+  color: var(--color-brand-primary);
+}
+
+.secondary:active:not(:disabled) {
+  border-color: var(--color-brand-primary-pressed);
+  color: var(--color-brand-primary-pressed);
+}
+
+.secondary:disabled {
+  background-color: var(--color-neutral-100);
+  border-color: var(--color-neutral-200);
+  color: var(--color-neutral-500);
+  cursor: not-allowed;
+}

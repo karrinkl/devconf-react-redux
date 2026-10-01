@@ -1,0 +1,70 @@
+/* Панель избранного. Подписана на хранилище, с карточками не связана. */
+
+.panel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4) var(--space-3) var(--space-5);
+  background-color: var(--color-neutral-0);
+  border: 1.5px solid var(--color-neutral-200);
+  border-radius: 999px;
+  box-shadow: var(--shadow-card);
+}
+
+.panelActive {
+  border-color: var(--color-brand-primary);
+}
+
+.icon {
+  color: var(--color-neutral-300);
+}
+
+.iconActive {
+  color: var(--color-brand-primary);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.count {
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: 600;
+  color: var(--color-neutral-900);
+}
+
+.names {
+  max-width: 420px;
+  overflow: hidden;
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-line);
+  font-weight: 500;
+  color: var(--color-neutral-500);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clear {
+  padding: var(--space-2) var(--space-4);
+  background: none;
+  border: none;
+  border-radius: 999px;
+  font-family: var(--font-family);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-line);
+  font-weight: 600;
+  color: var(--color-brand-primary);
+  cursor: pointer;
+  transition: background-color var(--motion-fast) var(--easing);
+}
+
+.clear:hover {
+  background-color: var(--color-brand-primary-subtle);
+}
+
+.clear:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}

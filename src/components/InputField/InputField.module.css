@@ -1,0 +1,64 @@
+/* Компонент InputField. Соответствует набору Input/Registration из ЛР № 17. */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 360px;
+}
+
+.label {
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-line);
+  font-weight: 500;
+  color: var(--color-neutral-700);
+}
+
+.input {
+  width: 100%;
+  padding: 14px var(--space-4);
+  background-color: var(--color-neutral-0);
+  border: 1.5px solid var(--color-neutral-300);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  color: var(--color-neutral-900);
+  transition:
+    border-color var(--motion-fast) var(--easing),
+    background-color var(--motion-fast) var(--easing),
+    box-shadow var(--motion-fast) var(--easing);
+}
+
+.input::placeholder {
+  color: var(--color-neutral-500);
+}
+
+/* Состояние Focused из набора вариантов Figma */
+.input:focus {
+  outline: none;
+  border-color: var(--color-brand-primary);
+  box-shadow: var(--focus-ring);
+}
+
+/* Состояние Error из набора вариантов Figma */
+.inputError {
+  background-color: var(--color-semantic-error-subtle);
+  border-color: var(--color-semantic-error);
+}
+
+.inputError:focus {
+  border-color: var(--color-semantic-error);
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.25);
+}
+
+.helper {
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-line);
+  font-weight: 500;
+  color: var(--color-neutral-500);
+}
+
+.helperError {
+  color: var(--color-semantic-error);
+}

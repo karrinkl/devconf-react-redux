@@ -1,0 +1,130 @@
+/* Компонент SpeakerCard. Соответствует набору Card/Speaker из ЛР № 17. */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  background-color: var(--color-neutral-0);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition:
+    box-shadow var(--motion-medium) var(--easing),
+    transform var(--motion-medium) var(--easing);
+}
+
+/* Состояние Hover из набора вариантов Figma */
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+.photoWrap {
+  position: relative;
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  background-color: var(--color-brand-primary);
+}
+
+/* Кнопка избранного поверх фотографии */
+.favorite {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  border: none;
+  border-radius: 999px;
+  color: var(--color-neutral-300);
+  cursor: pointer;
+  transition:
+    color var(--motion-fast) var(--easing),
+    background-color var(--motion-fast) var(--easing),
+    transform var(--motion-fast) var(--easing);
+}
+
+.favorite:hover {
+  color: var(--color-neutral-500);
+  transform: scale(1.06);
+}
+
+.favorite:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Активное состояние задаётся значением из хранилища */
+.favoriteActive {
+  background-color: var(--color-brand-primary);
+  color: var(--color-neutral-0);
+}
+
+.favoriteActive:hover {
+  background-color: var(--color-brand-primary-hover);
+  color: var(--color-neutral-0);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5) var(--space-6) var(--space-6);
+}
+
+.name {
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-neutral-900);
+}
+
+.role {
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-line);
+  color: var(--color-neutral-500);
+}
+
+.topic {
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  color: var(--color-neutral-700);
+}
+
+.divider {
+  height: 1px;
+  margin-top: var(--space-2);
+  background-color: var(--color-neutral-200);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+  color: var(--color-neutral-500);
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-line);
+  font-weight: 500;
+}
+
+/* Иконка внутри метаданных окрашивается фирменным цветом */
+.metaIcon {
+  color: var(--color-brand-primary);
+}
